@@ -13,10 +13,10 @@ class App extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: '/items', 
+      url: '/Movies', 
       success: (data) => {
         this.setState({
-          items: data
+          movie: data
         })
       },
       error: (err) => {
