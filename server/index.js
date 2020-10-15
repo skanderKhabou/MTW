@@ -1,26 +1,20 @@
-var express = require('express');
-var bodyParser = require('body-parser');
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose')
+const app = express();
 
-var items = require('../database-mongo');
-
-var app = express();
-
-
+app.use(express.json());
+// app.use('/static', express.static(__dirname + 'react-client/dist'));
 app.use(express.static(__dirname + '/../react-client/dist'));
 
+// Routers 
+const movieRouter = require('../routers/movieRouter');
+const user = require('../routers/usersRouter');
 
+app.use('/movie', movieRouter)
+app.use('/user', user)
 
-app.get('/items', function (req, res) {
-  items.selectAll(function (err, data) {
-    if (err) {
-      res.sendStatus(500);
-    } else {
-      res.json(data);
-    }
-  });
-});
-
-app.listen(3000, function () {
+app.listen(3000, () => {
   console.log('listening on port 3000!');
 });
 

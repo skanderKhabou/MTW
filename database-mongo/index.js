@@ -1,31 +1,12 @@
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/Movies');
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/movie');
 
-var db = mongoose.connection;
+const db = mongoose.connection;
 
-db.on('error', function() {
+db.on('error', () => { 
   console.log('mongoose connection error');
 });
 
-db.once('open', function() {
+db.once('open', () => {
   console.log('mongoose connected successfully');
 });
-
-var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
-});
-
-var movie = mongoose.model('Movies', itemSchema);
-
-var selectAll = function(callback) {
-  movie.find({}, function(err, items) {
-    if(err) {
-      callback(err, null);
-    } else {
-      callback(null, items);
-    }
-  });
-};
-
-module.exports.selectAll = selectAll;
