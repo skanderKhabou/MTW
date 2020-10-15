@@ -1,19 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import List from './components/List.jsx';
+import List from './components/List.jsx'
+import Home from './components/Home.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       items: []
     }
   }
 
   componentDidMount() {
     $.ajax({
-      url: '/Movies', 
+      url: '/items',
       success: (data) => {
         this.setState({
           movie: data
@@ -25,10 +26,9 @@ class App extends React.Component {
     });
   }
 
-  render () {
+  render() {
     return (<div>
-      <h1>Item List</h1>
-      <List items={this.state.items}/>
+      <Home />
     </div>)
   }
 }
