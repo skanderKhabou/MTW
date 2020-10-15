@@ -1,5 +1,5 @@
 .back {
-    background-image: url("https://cdn.hipwallpaper.com/i/98/21/dUyCkp.jpg");
+    background-image: url("https://cdn.hipwallpaper.com/i/20/62/O1HKpz.jpg");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -58,8 +58,17 @@
     width: 5rem;
     font-size: large;
     font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    margin-top: 9px;
+    font-weight: bold;
+    box-sizing: border-box;
+    border-radius: 0.5em;
     
 }
+
+.btn:hover {
+    background-color: #f44336;
+    color: white;
+  }
 
 h1{
 
