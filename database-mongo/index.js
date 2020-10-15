@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/Movies');
 
 var db = mongoose.connection;
 
@@ -16,10 +16,10 @@ var itemSchema = mongoose.Schema({
   description: String
 });
 
-var Item = mongoose.model('Item', itemSchema);
+var movie = mongoose.model('Movies', itemSchema);
 
 var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
+  movie.find({}, function(err, items) {
     if(err) {
       callback(err, null);
     } else {

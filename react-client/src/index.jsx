@@ -17,7 +17,7 @@ class App extends React.Component {
       url: '/items',
       success: (data) => {
         this.setState({
-          items: data
+          movie: data
         })
       },
       error: (err) => {
