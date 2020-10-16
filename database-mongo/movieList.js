@@ -6,6 +6,9 @@ const movieSchema = new Schema({
         type: String,
         required: true
     },
+    category: {
+        type: String
+    },
     imageurl: {
         type: String
     },
