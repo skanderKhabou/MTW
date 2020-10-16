@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 const userSchema = new Schema({
     id: {
@@ -14,5 +14,10 @@ const userSchema = new Schema({
 })
 
 const User = mongoose.model('User', userSchema);
+// const test = new User({
+//     id: "333",
+//     whishList: "hhh"
+// })
+// console.log(test)
 
 module.exports = User

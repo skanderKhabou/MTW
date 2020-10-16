@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/movie');
+mongoose.connect('mongodb://localhost/Movies');
 
 const db = mongoose.connection;
 
-db.on('error', () => { 
+db.on('error', () => {
   console.log('mongoose connection error');
 });
 
